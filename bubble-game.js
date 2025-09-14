@@ -30,7 +30,16 @@ class BubbleGame {
     bindEvents() {
         this.startButton.addEventListener('click', () => this.startGame());
         this.resetButton.addEventListener('click', () => this.resetGame());
+        
+        // Handle both click and touch events for better mobile support
         this.gameArea.addEventListener('click', (e) => this.handleBubbleClick(e));
+        this.gameArea.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevent scrolling
+            this.handleBubbleClick(e);
+        });
+        
+        // Prevent context menu on long press
+        this.gameArea.addEventListener('contextmenu', (e) => e.preventDefault());
     }
     
     createBubbleStyles() {
@@ -124,14 +133,19 @@ class BubbleGame {
         const bubble = document.createElement('div');
         bubble.className = 'bubble';
         
-        // Random size between 30px and 80px
-        const size = Math.random() * 50 + 30;
+        // Adjust size for mobile devices
+        const isMobile = window.innerWidth <= 768;
+        const minSize = isMobile ? 40 : 30;
+        const maxSize = isMobile ? 70 : 80;
+        const size = Math.random() * (maxSize - minSize) + minSize;
+        
         bubble.style.width = size + 'px';
         bubble.style.height = size + 'px';
         
-        // Random position
-        const x = Math.random() * (this.gameArea.offsetWidth - size);
-        const y = Math.random() * (this.gameArea.offsetHeight - size);
+        // Random position with better mobile spacing
+        const padding = isMobile ? 10 : 5;
+        const x = Math.random() * (this.gameArea.offsetWidth - size - padding * 2) + padding;
+        const y = Math.random() * (this.gameArea.offsetHeight - size - padding * 2) + padding;
         bubble.style.left = x + 'px';
         bubble.style.top = y + 'px';
         
@@ -146,9 +160,15 @@ class BubbleGame {
         ];
         bubble.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         
-        // Add click event
+        // Add click and touch events for better mobile support
         bubble.addEventListener('click', (e) => {
             e.stopPropagation();
+            this.popBubble(bubble);
+        });
+        
+        bubble.addEventListener('touchstart', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
             this.popBubble(bubble);
         });
         

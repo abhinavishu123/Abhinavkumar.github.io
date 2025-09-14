@@ -314,8 +314,74 @@ class Chatbot {
     }
 }
 
-// Initialize chatbot when page loads
+// Mobile Navigation
+class MobileNavigation {
+    constructor() {
+        this.mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        this.mobileMenu = document.getElementById('mobile-menu');
+        this.mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        this.isOpen = false;
+        this.init();
+    }
+
+    init() {
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        this.mobileMenuBtn.addEventListener('click', () => this.toggleMenu());
+        
+        // Close menu when clicking on nav links
+        this.mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => this.closeMenu());
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.isOpen && !this.mobileMenu.contains(e.target) && !this.mobileMenuBtn.contains(e.target)) {
+                this.closeMenu();
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen) {
+                this.closeMenu();
+            }
+        });
+    }
+
+    toggleMenu() {
+        this.isOpen ? this.closeMenu() : this.openMenu();
+    }
+
+    openMenu() {
+        this.mobileMenu.classList.remove('hidden');
+        this.mobileMenuBtn.innerHTML = '<i class="fas fa-times text-xl"></i>';
+        this.isOpen = true;
+        
+        // Add smooth animation
+        setTimeout(() => {
+            this.mobileMenu.style.opacity = '1';
+            this.mobileMenu.style.transform = 'translateY(0)';
+        }, 10);
+    }
+
+    closeMenu() {
+        this.mobileMenu.style.opacity = '0';
+        this.mobileMenu.style.transform = 'translateY(-10px)';
+        
+        setTimeout(() => {
+            this.mobileMenu.classList.add('hidden');
+            this.mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+            this.isOpen = false;
+        }, 200);
+    }
+}
+
+// Initialize mobile navigation and chatbot when page loads
 document.addEventListener('DOMContentLoaded', () => {
+    new MobileNavigation();
     new Chatbot();
 });
 

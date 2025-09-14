@@ -193,3 +193,181 @@ footer h2 {
     cursor: not-allowed;
     transform: none;
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Improve touch targets */
+    button, a, input {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Mobile navigation */
+    #mobile-menu {
+        backdrop-filter: blur(15px);
+        background: rgba(0, 0, 0, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .mobile-nav-link {
+        padding: 12px 16px;
+        border-radius: 8px;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-nav-link:hover {
+        background: rgba(0, 255, 255, 0.1);
+        transform: translateX(8px);
+    }
+    
+    /* Mobile chatbot */
+    #chatbot-widget {
+        bottom: 16px;
+        right: 16px;
+    }
+    
+    #chat-window {
+        width: calc(100vw - 32px);
+        max-width: 320px;
+        right: -16px;
+        bottom: 80px;
+    }
+    
+    /* Mobile game area */
+    #game-area {
+        height: 200px;
+        touch-action: manipulation;
+    }
+    
+    /* Mobile text sizes */
+    .neon-pink, .neon-cyan {
+        text-shadow: 0 0 8px currentColor;
+    }
+    
+    /* Mobile glassmorphism */
+    .glassmorphism {
+        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.08);
+    }
+    
+    /* Mobile skill bars */
+    .skill-bar {
+        height: 6px;
+    }
+    
+    /* Mobile project cards */
+    .hover-effect:hover {
+        transform: scale(1.02);
+    }
+    
+    /* Mobile footer */
+    footer {
+        padding: 24px 16px;
+    }
+    
+    /* Mobile hero section */
+    #hero {
+        padding: 0 16px;
+    }
+    
+    /* Mobile about section */
+    #about img {
+        max-width: 280px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .hover-effect:hover {
+        transform: none;
+    }
+    
+    .hover-effect:active {
+        transform: scale(0.98);
+    }
+    
+    button:hover {
+        transform: none;
+    }
+    
+    button:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    /* Even smaller text for very small screens */
+    .text-4xl {
+        font-size: 2rem;
+    }
+    
+    .text-3xl {
+        font-size: 1.75rem;
+    }
+    
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+    
+    /* Compact game stats */
+    .flex.space-x-4 > * + * {
+        margin-left: 8px;
+    }
+    
+    /* Smaller chatbot */
+    #chat-window {
+        width: calc(100vw - 24px);
+        max-width: 300px;
+        height: 70vh;
+        max-height: 400px;
+    }
+    
+    /* Compact navigation */
+    nav {
+        padding: 12px 16px;
+    }
+    
+    h1 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    #hero {
+        height: 100vh;
+        padding: 60px 16px 16px;
+    }
+    
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    #hero p {
+        font-size: 1rem;
+    }
+    
+    /* Adjust chatbot for landscape */
+    #chat-window {
+        height: 60vh;
+        max-height: 300px;
+    }
+    
+    /* Adjust game area for landscape */
+    #game-area {
+        height: 180px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .neon-pink, .neon-cyan {
+        text-shadow: 0 0 12px currentColor;
+    }
+    
+    .glassmorphism {
+        backdrop-filter: blur(12px);
+    }
+}

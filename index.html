@@ -19,44 +19,61 @@
     <!-- Navbar -->
     <nav class="fixed top-0 w-full z-50 glassmorphism p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold neon-pink">Abhinav Kumar</h1>
-            <ul class="flex space-x-6">
+            <h1 class="text-xl md:text-2xl font-bold neon-pink">Abhinav Kumar</h1>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-6">
                 <li><a href="#hero" class="hover:text-cyan-400 transition">Home</a></li>
                 <li><a href="#about" class="hover:text-cyan-400 transition">About</a></li>
                 <li><a href="#skills" class="hover:text-cyan-400 transition">Skills</a></li>
                 <li><a href="#projects" class="hover:text-cyan-400 transition">Projects</a></li>
             </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full glassmorphism border-t border-gray-600">
+            <ul class="flex flex-col space-y-2 p-4">
+                <li><a href="#hero" class="block py-2 hover:text-cyan-400 transition mobile-nav-link">Home</a></li>
+                <li><a href="#about" class="block py-2 hover:text-cyan-400 transition mobile-nav-link">About</a></li>
+                <li><a href="#skills" class="block py-2 hover:text-cyan-400 transition mobile-nav-link">Skills</a></li>
+                <li><a href="#projects" class="block py-2 hover:text-cyan-400 transition mobile-nav-link">Projects</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative h-screen flex items-center justify-center parallax">
-        <div class="text-center z-10">
-            <h1 class="text-6xl md:text-8xl font-bold mb-4 neon-pink">Welcome</h1>
-            <p class="text-xl md:text-2xl mb-8 neon-cyan">Full-Stack Developer | Designer | Innovator</p>
-            <a href="#projects" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-full text-white font-semibold hover:scale-110 transition transform">Explore My Work</a>
+    <section id="hero" class="relative h-screen flex items-center justify-center parallax px-4">
+        <div class="text-center z-10 max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 neon-pink">Welcome</h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 neon-cyan px-4">Full-Stack Developer | Designer | Innovator</p>
+            <a href="#projects" class="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-full text-white font-semibold hover:scale-110 transition transform text-sm sm:text-base">Explore My Work</a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-10">
-        <div class="container mx-auto grid md:grid-cols-2 gap-10 items-center">
-            <div class="fade-in">
-                <img src="Images\Abhinav-picture.png" alt="Professional headshot of Abhinav Kumar in a futuristic coding environment with glowing screens and holographic interfaces" class="w-full rounded-full border-4 border-cyan-400 hover:shadow-lg hover:shadow-cyan-400 transition" />
+    <section id="about" class="py-12 sm:py-20 px-4 sm:px-10">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+            <div class="fade-in order-2 md:order-1">
+                <img src="Images\Abhinav-picture.png" alt="Professional headshot of Abhinav Kumar in a futuristic coding environment with glowing screens and holographic interfaces" class="w-full max-w-sm mx-auto rounded-full border-4 border-cyan-400 hover:shadow-lg hover:shadow-cyan-400 transition" />
             </div>
-            <div class="fade-in">
-                <h2 class="text-4xl font-bold mb-4 neon-pink">About Me</h2>
-                <p class="text-lg mb-6">I'm a passionate developer with over 5 years of experience in creating stunning web applications. I love blending creativity with technology to build immersive experiences.</p>
-                <p class="text-lg">When not coding, I enjoy exploring new tech trends and gaming.</p>
+            <div class="fade-in order-1 md:order-2 text-center md:text-left">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 neon-pink">About Me</h2>
+                <p class="text-base sm:text-lg mb-6">I'm a passionate developer with over 5 years of experience in creating stunning web applications. I love blending creativity with technology to build immersive experiences.</p>
+                <p class="text-base sm:text-lg">When not coding, I enjoy exploring new tech trends and gaming.</p>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 px-10 bg-gray-900">
+    <section id="skills" class="py-12 sm:py-20 px-4 sm:px-10 bg-gray-900">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-10 neon-cyan">Skills</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10 neon-cyan">Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="glassmorphism p-6 hover-effect fade-in">
                     <i class="fa fa-code text-4xl mb-4 neon-pink"></i>
                     <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
@@ -98,10 +115,10 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-10">
+    <section id="projects" class="py-12 sm:py-20 px-4 sm:px-10">
         <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-10 neon-pink">Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10 neon-pink">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <div class="glassmorphism p-6 hover-effect fade-in parallax">
                     <img src="Images\final_website_preview.png" alt="Screenshot of e-commerce platform featuring responsive design with shopping cart interface and modern product listings" class="w-full h-48 object-cover rounded mb-4" />
                     <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
@@ -125,86 +142,86 @@
     </section>
 
     <!-- Bubble Popping Game Footer -->
-    <footer class="py-12 px-10 bg-gray-900 relative overflow-hidden">
+    <footer class="py-8 sm:py-12 px-4 sm:px-10 bg-gray-900 relative overflow-hidden">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6 neon-cyan">Bubble Pop Game</h2>
-            <p class="text-gray-300 mb-6">Click the bubbles to pop them! See how many you can pop in 30 seconds.</p>
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 neon-cyan">Bubble Pop Game</h2>
+            <p class="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">Tap the bubbles to pop them! See how many you can pop in 30 seconds.</p>
             
             <!-- Game Stats -->
-            <div class="flex justify-center space-x-8 mb-6">
-                <div class="glassmorphism p-4 rounded-lg">
-                    <div class="text-2xl font-bold neon-pink" id="score">0</div>
-                    <div class="text-sm text-gray-300">Score</div>
+            <div class="flex justify-center space-x-4 sm:space-x-8 mb-4 sm:mb-6">
+                <div class="glassmorphism p-3 sm:p-4 rounded-lg">
+                    <div class="text-xl sm:text-2xl font-bold neon-pink" id="score">0</div>
+                    <div class="text-xs sm:text-sm text-gray-300">Score</div>
                 </div>
-                <div class="glassmorphism p-4 rounded-lg">
-                    <div class="text-2xl font-bold neon-cyan" id="timer">30</div>
-                    <div class="text-sm text-gray-300">Time Left</div>
+                <div class="glassmorphism p-3 sm:p-4 rounded-lg">
+                    <div class="text-xl sm:text-2xl font-bold neon-cyan" id="timer">30</div>
+                    <div class="text-xs sm:text-sm text-gray-300">Time Left</div>
                 </div>
-                <div class="glassmorphism p-4 rounded-lg">
-                    <div class="text-2xl font-bold text-green-400" id="high-score">0</div>
-                    <div class="text-sm text-gray-300">Best Score</div>
+                <div class="glassmorphism p-3 sm:p-4 rounded-lg">
+                    <div class="text-xl sm:text-2xl font-bold text-green-400" id="high-score">0</div>
+                    <div class="text-xs sm:text-sm text-gray-300">Best Score</div>
                 </div>
             </div>
             
             <!-- Game Controls -->
-            <div class="flex justify-center space-x-4 mb-6">
-                <button id="start-game" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-cyan-500 text-white rounded-lg font-semibold hover:scale-105 transition transform">
+            <div class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-6">
+                <button id="start-game" class="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-pink-500 to-cyan-500 text-white rounded-lg font-semibold hover:scale-105 transition transform text-sm sm:text-base">
                     <i class="fas fa-play mr-2"></i>Start Game
                 </button>
-                <button id="reset-game" class="px-6 py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-500 transition">
+                <button id="reset-game" class="px-4 sm:px-6 py-2 sm:py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-500 transition text-sm sm:text-base">
                     <i class="fas fa-redo mr-2"></i>Reset
                 </button>
             </div>
             
             <!-- Game Area -->
-            <div id="game-area" class="relative h-64 bg-gradient-to-b from-blue-900 to-purple-900 rounded-lg border-2 border-cyan-400 overflow-hidden cursor-crosshair">
-                <div id="game-message" class="absolute inset-0 flex items-center justify-center text-white text-xl font-bold">
-                    Click "Start Game" to begin!
+            <div id="game-area" class="relative h-48 sm:h-64 bg-gradient-to-b from-blue-900 to-purple-900 rounded-lg border-2 border-cyan-400 overflow-hidden cursor-crosshair">
+                <div id="game-message" class="absolute inset-0 flex items-center justify-center text-white text-lg sm:text-xl font-bold px-4">
+                    Tap "Start Game" to begin!
                 </div>
             </div>
             
             <!-- Footer Text -->
-            <div class="mt-8 pt-6 border-t border-gray-700">
-                <p class="text-gray-400 text-sm">
-                    © 2024 Abhinav Kumar. Built with ❤️ and lots of bubbles!
+            <div class="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-700">
+                <p class="text-gray-400 text-xs sm:text-sm">
+                    © 2025 Abhinav Kumar. Built with ❤️ and lots of bubbles!
                 </p>
             </div>
         </div>
     </footer>
 
     <!-- Chatbot Widget -->
-    <div id="chatbot-widget" class="fixed bottom-6 right-6 z-50">
+    <div id="chatbot-widget" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
         <!-- Chat Button -->
-        <button id="chat-toggle" class="bg-gradient-to-r from-pink-500 to-cyan-500 text-white rounded-full p-4 shadow-lg hover:scale-110 transition transform">
-            <i class="fas fa-comments text-xl"></i>
+        <button id="chat-toggle" class="bg-gradient-to-r from-pink-500 to-cyan-500 text-white rounded-full p-3 sm:p-4 shadow-lg hover:scale-110 transition transform">
+            <i class="fas fa-comments text-lg sm:text-xl"></i>
         </button>
         
         <!-- Chat Window -->
-        <div id="chat-window" class="hidden absolute bottom-16 right-0 w-80 h-96 glassmorphism rounded-lg shadow-xl">
+        <div id="chat-window" class="hidden absolute bottom-12 sm:bottom-16 right-0 w-72 sm:w-80 h-80 sm:h-96 glassmorphism rounded-lg shadow-xl">
             <!-- Chat Header -->
-            <div class="flex justify-between items-center p-4 border-b border-gray-600">
-                <h3 class="text-lg font-semibold neon-cyan">Connect with Abhinav</h3>
-                <button id="chat-close" class="text-gray-400 hover:text-white">
-                    <i class="fas fa-times"></i>
+            <div class="flex justify-between items-center p-3 sm:p-4 border-b border-gray-600">
+                <h3 class="text-base sm:text-lg font-semibold neon-cyan">Connect with Abhinav</h3>
+                <button id="chat-close" class="text-gray-400 hover:text-white p-1">
+                    <i class="fas fa-times text-sm sm:text-base"></i>
                 </button>
             </div>
             
             <!-- Chat Messages -->
-            <div id="chat-messages" class="h-64 overflow-y-auto p-4 space-y-3">
+            <div id="chat-messages" class="h-56 sm:h-64 overflow-y-auto p-3 sm:p-4 space-y-3">
                 <div class="flex justify-start">
-                    <div class="bg-gray-700 rounded-lg p-3 max-w-xs">
-                        <p class="text-sm">Hi! I'm here to help you connect with Abhinav. What would you like to discuss?</p>
+                    <div class="bg-gray-700 rounded-lg p-2 sm:p-3 max-w-xs">
+                        <p class="text-xs sm:text-sm">Hi! I'm here to help you connect with Abhinav. What would you like to discuss?</p>
                     </div>
                 </div>
             </div>
             
             <!-- Chat Input -->
-            <div class="p-4 border-t border-gray-600">
+            <div class="p-3 sm:p-4 border-t border-gray-600">
                 <div class="flex space-x-2">
                     <input id="chat-input" type="text" placeholder="Type your message..." 
-                           class="flex-1 bg-transparent border border-gray-600 rounded px-3 py-2 text-sm focus:outline-none focus:border-cyan-400">
-                    <button id="chat-send" class="bg-gradient-to-r from-pink-500 to-cyan-500 text-white px-4 py-2 rounded hover:scale-105 transition transform">
-                        <i class="fas fa-paper-plane"></i>
+                           class="flex-1 bg-transparent border border-gray-600 rounded px-2 sm:px-3 py-2 text-xs sm:text-sm focus:outline-none focus:border-cyan-400">
+                    <button id="chat-send" class="bg-gradient-to-r from-pink-500 to-cyan-500 text-white px-3 sm:px-4 py-2 rounded hover:scale-105 transition transform">
+                        <i class="fas fa-paper-plane text-xs sm:text-sm"></i>
                     </button>
                 </div>
             </div>
