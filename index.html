@@ -25,7 +25,6 @@
                 <li><a href="#about" class="hover:text-cyan-400 transition">About</a></li>
                 <li><a href="#skills" class="hover:text-cyan-400 transition">Skills</a></li>
                 <li><a href="#projects" class="hover:text-cyan-400 transition">Projects</a></li>
-                <li><a href="#testimonials" class="hover:text-cyan-400 transition">Testimonials</a></li>
             </ul>
         </div>
     </nav>
@@ -125,23 +124,53 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 px-10 bg-gray-900">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-10 neon-cyan">Testimonials</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glassmorphism p-8 hover-effect fade-in">
-                    <p class="text-lg mb-4 italic">"John's work exceeded our expectations. He's a true professional."</p>
-                    <p class="neon-pink">- Client A</p>
+    <!-- Bubble Popping Game Footer -->
+    <footer class="py-12 px-10 bg-gray-900 relative overflow-hidden">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6 neon-cyan">Bubble Pop Game</h2>
+            <p class="text-gray-300 mb-6">Click the bubbles to pop them! See how many you can pop in 30 seconds.</p>
+            
+            <!-- Game Stats -->
+            <div class="flex justify-center space-x-8 mb-6">
+                <div class="glassmorphism p-4 rounded-lg">
+                    <div class="text-2xl font-bold neon-pink" id="score">0</div>
+                    <div class="text-sm text-gray-300">Score</div>
                 </div>
-                <div class="glassmorphism p-8 hover-effect fade-in">
-                    <p class="text-lg mb-4 italic">"Incredible attention to detail and innovative solutions."</p>
-                    <p class="neon-pink">- Client B</p>
+                <div class="glassmorphism p-4 rounded-lg">
+                    <div class="text-2xl font-bold neon-cyan" id="timer">30</div>
+                    <div class="text-sm text-gray-300">Time Left</div>
+                </div>
+                <div class="glassmorphism p-4 rounded-lg">
+                    <div class="text-2xl font-bold text-green-400" id="high-score">0</div>
+                    <div class="text-sm text-gray-300">Best Score</div>
                 </div>
             </div>
+            
+            <!-- Game Controls -->
+            <div class="flex justify-center space-x-4 mb-6">
+                <button id="start-game" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-cyan-500 text-white rounded-lg font-semibold hover:scale-105 transition transform">
+                    <i class="fas fa-play mr-2"></i>Start Game
+                </button>
+                <button id="reset-game" class="px-6 py-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-500 transition">
+                    <i class="fas fa-redo mr-2"></i>Reset
+                </button>
+            </div>
+            
+            <!-- Game Area -->
+            <div id="game-area" class="relative h-64 bg-gradient-to-b from-blue-900 to-purple-900 rounded-lg border-2 border-cyan-400 overflow-hidden cursor-crosshair">
+                <div id="game-message" class="absolute inset-0 flex items-center justify-center text-white text-xl font-bold">
+                    Click "Start Game" to begin!
+                </div>
+            </div>
+            
+            <!-- Footer Text -->
+            <div class="mt-8 pt-6 border-t border-gray-700">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Abhinav Kumar. Built with ❤️ and lots of bubbles!
+                </p>
+            </div>
         </div>
-    </section>
-
+    </footer>
 
     <!-- Chatbot Widget -->
     <div id="chatbot-widget" class="fixed bottom-6 right-6 z-50">
@@ -185,6 +214,7 @@
     <!-- JavaScript -->
     <script src="notification-handler.js"></script>
     <script src="email-notifications.js"></script>
+    <script src="bubble-game.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
